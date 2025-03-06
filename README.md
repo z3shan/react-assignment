@@ -18,7 +18,7 @@ npm install
 ```
 
 ## Replace API Key
-Update `API_KEY` in `App.tsx` with your API key.
+Update `API_KEY` in `constants/index.tsx` with your API key.
 
 ## Run App
 ```bash
