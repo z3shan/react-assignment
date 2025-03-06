@@ -1,11 +1,10 @@
 /**
  * Button Component
- * 
+ *
  * A reusable button component that provides consistent styling with customization options.
  * The button features a blue background, white text, rounded corners, and a hover effect.
  */
 
-import React from 'react';
 import { cn } from '../utils';
 
 interface ButtonProps {
@@ -20,7 +19,7 @@ interface ButtonProps {
 /**
  * Button component that combines default styling with custom classes
  * and handles click events
- * 
+ *
  * @param children - The content to render inside the button
  * @param className - Additional CSS classes to apply
  * @param onClick - Click event handler
