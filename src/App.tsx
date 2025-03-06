@@ -14,8 +14,15 @@ import Card from './components/Card';
 import CardContent from './components/CardContent';
 import Button from './components/Button';
 import './App.css';
-import { AppProps } from './interfaces';
-
+import {Article} from './interfaces';
+interface AppProps {
+    // Array of articles fetched from the NY Times API
+    articles: Article[];
+    // Currently selected article to display details, null if none selected
+    selectedArticle: Article | null;
+    // Callback function to handle article selection
+    onArticleClick: (article: Article) => void;
+}
 
 const App: React.FC<AppProps> = ({ articles, selectedArticle, onArticleClick }) => {
     return (

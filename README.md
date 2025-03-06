@@ -1,11 +1,14 @@
 # NY Times Most Popular Articles App
 
-This is a React + TypeScript + Vite application using Vite to fetch and display NY Times popular articles.
+This is a React + TypeScript application using Vite to fetch and display NY Times popular articles.
 
 ## Prerequisites
 - Node.js
 - NY Times API Key
 - SonarQube (optional)
+
+## Live URL 
+- https://z3shan.github.io/react-assignment ( deployed using github pages)
 
 ## Installation
 ```bash
@@ -53,4 +56,3 @@ npm run build
 
 ## License
 MIT
-```
