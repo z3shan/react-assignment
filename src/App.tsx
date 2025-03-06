@@ -12,9 +12,9 @@
 import React from 'react';
 import Card from './components/Card';
 import CardContent from './components/CardContent';
-import Button from './components/Button';
 import './App.css';
 import {Article} from './interfaces';
+import {cn} from "./utils";
 interface AppProps {
     // Array of articles fetched from the NY Times API
     articles: Article[];
@@ -54,7 +54,15 @@ const App: React.FC<AppProps> = ({ articles, selectedArticle, onArticleClick }) 
                             <h2 className="text-xl font-semibold mb-2">{selectedArticle.title}</h2>
                             <p>{selectedArticle.abstract}</p>
                             <a href={selectedArticle.url} target="_blank" rel="noopener noreferrer">
-                                <Button className="mt-4 cursor-pointer">Read More</Button>
+                                <button
+                                    className={cn(
+                                        // Default button styling with hover effect and smooth transition
+                                        'bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300',
+                                       'mt-4 cursor-pointer'
+                                    )}
+                                >
+                                    Read More
+                                </button>
                             </a>
                         </CardContent>
                     </Card>
