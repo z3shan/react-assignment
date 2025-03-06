@@ -22,7 +22,8 @@ const AppContainer: React.FC = () => {
     const [articles, setArticles] = useState<Article[]>([]);
     // State for tracking the currently selected article
     const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
     // Fetch articles when component mounts
     useEffect(() => {
         fetchArticles();
@@ -33,11 +34,16 @@ const AppContainer: React.FC = () => {
      * Sets the articles state with the response data or logs error if request fails
      */
     const fetchArticles = async () => {
+        setLoading(true);
+        setError(null);
         try {
             const { data } = await axios.get(API_URL);
             setArticles(data.results || []);
         } catch (error) {
+            setError('Failed to fetch articles. Please try again later.');
             console.error('Error fetching articles:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -55,6 +61,8 @@ const AppContainer: React.FC = () => {
             articles={articles}
             selectedArticle={selectedArticle}
             onArticleClick={handleArticleClick}
+            loading={loading}
+            error={error}
         />
     );
 };
