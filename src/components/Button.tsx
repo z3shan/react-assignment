@@ -1,10 +1,20 @@
+/**
+ * Button Component
+ *
+ * A reusable button component that provides consistent styling with customization options.
+ * The button features a blue background, white text, rounded corners, and a hover effect.
+ */
+
+import React from 'react';
 import { cn } from '../utils';
-import {JSX} from "react";
 
 interface ButtonProps {
-    children: React.ReactNode; // The content to be displayed inside the button
-    className?: string; // Optional CSS classes to extend or override default styling
-    onClick?: React.MouseEventHandler<HTMLButtonElement>; // Type updated to React's MouseEventHandler
+    // The content to be displayed inside the button
+    children: string;
+    // Optional CSS classes to extend or override default styling
+    className?: string;
+    // Optional click handler function
+    onClick?: () => void;
 }
 
 /**
@@ -15,7 +25,7 @@ interface ButtonProps {
  * @param className - Additional CSS classes to apply
  * @param onClick - Click event handler
  */
-const Button: ({children, className, onClick}: { children: any; className: any; onClick: any }) => JSX.Element = ({ children, className, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, onClick }) => {
     return (
         <button
             className={cn(
