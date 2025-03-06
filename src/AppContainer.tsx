@@ -22,7 +22,9 @@ const AppContainer: React.FC = () => {
     const [articles, setArticles] = useState<Article[]>([]);
     // State for tracking the currently selected article
     const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+    // State for tracking loading status during API requests
     const [loading, setLoading] = useState<boolean>(true);
+    // State for storing error messages if API request fails
     const [error, setError] = useState<string | null>(null);
     // Fetch articles when component mounts
     useEffect(() => {

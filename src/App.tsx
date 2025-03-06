@@ -1,3 +1,12 @@
+/**
+ * App Component
+ *
+ * Main application component that displays a list of NY Times most popular articles
+ * and their details in a two-column layout. The left column shows a scrollable list
+ * of article previews, while the right column displays the full details of the
+ * selected article.
+ */
+
 import React from 'react';
 import Card from './components/Card';
 import CardContent from './components/CardContent';
@@ -6,16 +15,31 @@ import { Article } from './interfaces';
 import { cn } from "./utils";
 
 interface AppProps {
+    // Array of articles fetched from the NY Times API
     articles: Article[];
+    // Currently selected article to display details, null if none selected
     selectedArticle: Article | null;
+    // Callback function triggered when an article is clicked
     onArticleClick: (article: Article) => void;
+    // Loading state indicator during API requests
     loading: boolean;
+    // Error message if API request fails, null otherwise
     error: string | null;
 }
 
+/**
+ * App component that renders the main application interface
+ * 
+ * @param articles - Array of NY Times articles to display
+ * @param selectedArticle - Currently selected article for detailed view
+ * @param onArticleClick - Handler function for article selection
+ * @param loading - Boolean indicating if articles are being loaded
+ * @param error - Error message if article fetching failed
+ */
 const App: React.FC<AppProps> = ({ articles, selectedArticle, onArticleClick, loading, error }) => {
     return (
         <div className="container mx-auto p-4 h-screen grid grid-cols-2 gap-4">
+            {/* Left column: Article list */}
             <div className="overflow-y-auto pr-4 border-r border-gray-300">
                 <h1 className="text-2xl font-bold mb-4">NY Times Most Popular Articles</h1>
 
@@ -41,6 +65,7 @@ const App: React.FC<AppProps> = ({ articles, selectedArticle, onArticleClick, lo
                 )}
             </div>
 
+            {/* Right column: Selected article details */}
             <div className="overflow-y-auto pl-4">
                 {selectedArticle ? (
                     <Card>
