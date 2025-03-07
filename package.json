@@ -9,6 +9,8 @@
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "test": "jest --watch",
+    "test:e2e": "cypress open",
+    "test:headless": "cypress run",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -16,20 +18,22 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.10",
     "axios": "^1.8.1",
-    "cypress": "^14.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@cypress/vite-dev-server": "^6.0.2",
     "@eslint/js": "^9.21.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.9",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "cypress": "^14.1.0",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
