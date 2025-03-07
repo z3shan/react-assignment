@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import CardContent from './CardContent';
+import CardContent from '../components/CardContent.tsx';
 
 describe('CardContent Component', () => {
     it('renders children correctly', () => {

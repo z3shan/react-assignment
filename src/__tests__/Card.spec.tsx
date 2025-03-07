@@ -1,5 +1,5 @@
 import {fireEvent, render, screen} from '@testing-library/react';
-import Card from './Card';
+import Card from '../components/Card.tsx';
 
 describe('Card Component', () => {
     it('renders children content correctly', () => {

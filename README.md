@@ -35,19 +35,17 @@ npm test
 ```
 ### UI Tests
 ```bash
-npx cypress open
+npm run test:e2e
 ```
 
 ## Linting
 ```bash
 npm run lint
 ```
-
-## Pre-Commit Hooks
-Husky is used to run linting and unit tests before every commit.
-
-## Code Quality
-SonarQube is integrated to generate code quality reports.
+## Code Coverage
+```bash
+npm run lint
+```
 
 ## Build
 ```bash
