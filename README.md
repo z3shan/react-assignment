@@ -44,7 +44,7 @@ npm run lint
 ```
 ## Code Coverage
 ```bash
-npm run lint
+npm run coverage
 ```
 
 ## Build
