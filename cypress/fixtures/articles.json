@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "title": "Sample Article 1",
+      "byline": "By Author One",
+      "abstract": "This is a summary of Sample Article 1.",
+      "url": "https://example.com/article-1"
+    },
+    {
+      "id": 2,
+      "title": "Sample Article 2",
+      "byline": "By Author Two",
+      "abstract": "This is a summary of Sample Article 2.",
+      "url": "https://example.com/article-2"
+    }
+  ]
+}
